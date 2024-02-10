@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image:  url(bg.png);
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 170px;
+            height: 324px;
+            margin: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .card-back {
+            background-color: #3498db;
+            transform: rotateY(180deg);
+        }
+
+        .card-back img, .card-front img {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 1024px) {
+            .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 100px;
+            height: 190px;
+            margin: 10px;
+            border: 1px solid #000;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+    }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".card");
+            let isFlipped = false;
+
+            cards.forEach(card => {
+                card.addEventListener("click", function () {
+                    if (!isFlipped && !this.classList.contains("flipped")) {
+                        this.classList.toggle("flipped");
+                        isFlipped = true;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="11.png" alt="Bài 1">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 1">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="12.png" alt="Bài 2">
+                </div>
+                <div class="card-face card-back">
+                    <img src="20k.png" alt="Bài 2">
+                </div>
+            </div>
+        </div>
+
+       <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="13.png" alt="Bài 3">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="14.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="15.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="db.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="16.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="bd.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="17.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="18.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="19.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="20k.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="20.png" alt="Bài 4">
+                </div>
+                <div class="card-face card-back">
+                    <img src="10k.png" alt="Bài 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
